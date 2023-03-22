@@ -1,4 +1,7 @@
 `default_nettype none //Comando para desabilitar declaração automática de wires
+`include "./Sprint1/ULA.sv"
+`include "./LCD_Controller.v"
+`include "./LCD_TEST2.v"
 module Mod_Teste (
 //Clocks
 input CLOCK_27, CLOCK_50,
@@ -33,5 +36,15 @@ LCD_TEST MyLCD (
 .LCD_EN ( LCD_EN ),
 .LCD_RS ( LCD_RS )
 );
-//---------- modifique a partir daqui --------
+//---------- modifique a partir daqui  --------
+
+//---------- Unidade Lógica Aritmétricas -------
+ULA minha_ula(
+    .sel        (       SW      [17]     ),
+    .input_a    (       SW      [3:0]    ),
+    .input_b    (       SW      [7:4]    ),
+    .output_s   (       LEDR    [3:0]    ),
+    .ovf        (       LEDG    [0]      )
+);
+//---------
 endmodule

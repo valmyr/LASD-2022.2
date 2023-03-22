@@ -7,6 +7,7 @@ module tb;
     logic   [WIDTH-1:0] input_a    ,
                         input_b    ,
                         output_s   ;
+    logic ovf;
     logic [WIDTH-1:0] test_pass, test_fail;
     ULA #(      .WIDTH(     WIDTH       ))
     minha_ula_instancia_01(

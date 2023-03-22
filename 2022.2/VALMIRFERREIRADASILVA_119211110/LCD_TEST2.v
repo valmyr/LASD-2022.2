@@ -81,7 +81,7 @@ function [8:0] hex2char;
 	hex2char = (h>9 ? 9'h137 : 9'h130) + h;	
 endfunction
 
-always
+always@*
 begin
 	case(LUT_INDEX)
 	//	Initial
