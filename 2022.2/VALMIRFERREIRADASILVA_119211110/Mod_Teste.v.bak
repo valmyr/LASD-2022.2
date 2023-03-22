@@ -1,5 +1,7 @@
 `default_nettype none //Comando para desabilitar declaração automática de wires
 `include "./Sprint1/ULA.sv"
+`include "./LCD_Controller.v"
+`include "./LCD_TEST2.v"
 module Mod_Teste (
 //Clocks
 input CLOCK_27, CLOCK_50,
