@@ -1,5 +1,5 @@
 $date
-	Wed Mar 22 17:14:39 2023
+	Wed Mar 22 18:43:37 2023
 $end
 $version
 	Icarus Verilog
@@ -11,7 +11,7 @@ $scope module tb $end
 $scope module minha_ula_instancia_01 $end
 $var wire 4 ! input_a [3:0] $end
 $var wire 4 " input_b [3:0] $end
-$var wire 1 # sel $end
+$var wire 2 # sel [1:0] $end
 $var wire 1 $ ovf $end
 $var wire 4 % output_s [3:0] $end
 $upscope $end
@@ -21,14 +21,14 @@ $enddefinitions $end
 $dumpvars
 bx %
 x$
-x#
+bx #
 bx "
 bx !
 $end
 #1
 b100 %
 0$
-0#
+b0 #
 b11 !
 b1 "
 #3
@@ -37,13 +37,25 @@ b1 %
 b1111 !
 b10 "
 #5
-b100 %
 0$
-1#
+b100 %
+b1 #
 b111 !
 b11 "
 #7
 b1111 %
-1$
+b0 #
 b1000 "
-#8
+#9
+b10 %
+b10 #
+b100 !
+b1 "
+#11
+b0 %
+b10 !
+b10 "
+#13
+b1111 !
+b100 "
+#14

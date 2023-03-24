@@ -30,7 +30,7 @@ module tb;
                 $display("fail");
                 $display("%b    %b     %b   %b", output_s,expect_output_s, ovf, expect_ovf);
             end 
-            // $display(" %b     : %b",expect_output_s,output_s);
+            $display(" %b     : %b",expect_output_s,output_s);
         end
     endtask
 
@@ -41,7 +41,8 @@ module tb;
         #1{sel,input_a,input_b} = 9'b0_0011_0001; #1 expect_task( 1 ,4'd4   ,   0)  ;// 03+01 = 4
         #1{sel,input_a,input_b} = 9'b0_1111_0010; #1 expect_task( 1 ,4'd17  ,   1)  ;// 15+02 = 17 ovfw 
         #1{sel,input_a,input_b} = 9'b1_0111_0011; #1 expect_task( 1 ,4'd4   ,   0)  ;// 07+02 = 4
-        #1{sel,input_a,input_b} = 9'b1_0111_1000; #1 expect_task( 1 ,4'd15  ,   0)  ;// 07-08 = -1 ffff
-
+        #1{sel,input_a,input_b} = 9'b0_0111_1000; #1 expect_task( 1 ,4'd15  ,   0)  ;// 07-08 = -1 ffff
+        $display(" pass    | fail");
+        $display("   %d    |   %d ",test_pass,test_fail);
     end
 endmodule

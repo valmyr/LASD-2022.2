@@ -1,5 +1,5 @@
-Analysis & Elaboration report for Mod_Teste
-Wed Mar 22 16:50:41 2023
+Analysis & Synthesis report for Mod_Teste
+Wed Mar 22 19:59:23 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -7,13 +7,10 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: LCD_TEST:MyLCD
-  5. Parameter Settings for User Entity Instance: LCD_TEST:MyLCD|LCD_Controller:u0
-  6. Parameter Settings for User Entity Instance: ULA:minha_ula
-  7. Analysis & Elaboration Settings
-  8. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
 
 
 
@@ -37,83 +34,34 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+--------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                 ;
-+-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed Mar 22 16:50:41 2023          ;
-; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
-; Revision Name                 ; Mod_Teste                                      ;
-; Top-level Entity Name         ; Mod_Teste                                      ;
-; Family                        ; Cyclone V                                      ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
-; Total registers               ; N/A until Partition Merge                      ;
-; Total pins                    ; N/A until Partition Merge                      ;
-; Total virtual pins            ; N/A until Partition Merge                      ;
-; Total block memory bits       ; N/A until Partition Merge                      ;
-; Total PLLs                    ; N/A until Partition Merge                      ;
-; Total DLLs                    ; N/A until Partition Merge                      ;
-+-------------------------------+------------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LCD_TEST:MyLCD ;
-+----------------+-------+------------------------------------+
-; Parameter Name ; Value ; Type                               ;
-+----------------+-------+------------------------------------+
-; LCD_INTIAL     ; 0     ; Signed Integer                     ;
-; LCD_RESTART    ; 4     ; Signed Integer                     ;
-; LCD_LINE1      ; 5     ; Signed Integer                     ;
-; LCD_CH_LINE    ; 21    ; Signed Integer                     ;
-; LCD_LINE2      ; 22    ; Signed Integer                     ;
-; LUT_SIZE       ; 37    ; Signed Integer                     ;
-+----------------+-------+------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LCD_TEST:MyLCD|LCD_Controller:u0 ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; CLK_Divide     ; 16    ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ULA:minha_ula ;
-+----------------+-------+-----------------------------------+
-; Parameter Name ; Value ; Type                              ;
-+----------------+-------+-----------------------------------+
-; WIDTH          ; 4     ; Signed Integer                    ;
-+----------------+-------+-----------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++-----------------------------+------------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Wed Mar 22 19:59:23 2023              ;
+; Quartus Prime Version       ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name               ; Mod_Teste                                      ;
+; Top-level Entity Name       ; Mod_Teste                                      ;
+; Family                      ; Cyclone V                                      ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
+; Total registers             ; N/A until Partition Merge                      ;
+; Total pins                  ; N/A until Partition Merge                      ;
+; Total virtual pins          ; N/A until Partition Merge                      ;
+; Total block memory bits     ; N/A until Partition Merge                      ;
+; Total PLLs                  ; N/A until Partition Merge                      ;
+; Total DLLs                  ; N/A until Partition Merge                      ;
++-----------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
 ; Top-level entity name                                                           ; Mod_Teste          ; Mod_Teste          ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Verilog Show LMF Mapping Messages                                               ; Off                ;                    ;
+; Verilog Version                                                                 ; SystemVerilog_2005 ; Verilog_2001       ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
 ; Enable compact report table                                                     ; Off                ; Off                ;
@@ -122,7 +70,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
 ; Preserve fewer node names                                                       ; On                 ; On                 ;
 ; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
-; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
 ; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                        ; Auto               ; Auto               ;
 ; Safe State Machine                                                              ; Off                ; Off                ;
@@ -193,46 +140,45 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Wed Mar 22 16:50:17 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mod_Teste -c Mod_Teste --analysis_and_elaboration
+    Info: Processing started: Wed Mar 22 19:59:08 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mod_Teste -c Mod_Teste
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file LCD_TEST2.v
     Info (12023): Found entity 1: LCD_TEST File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file LCD_Controller.v
     Info (12023): Found entity 1: LCD_Controller File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_Controller.v Line: 1
-Info (12021): Found 2 design units, including 2 entities, in source file Mod_Teste.v
-    Info (12023): Found entity 1: ULA File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Sprint1/ULA.sv Line: 1
-    Info (12023): Found entity 2: Mod_Teste File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 3
-Info (12127): Elaborating entity "Mod_Teste" for the top level hierarchy
-Warning (10034): Output port "HEX0" at Mod_Teste.v(10) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 10
-Warning (10034): Output port "HEX1" at Mod_Teste.v(10) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 10
-Warning (10034): Output port "HEX2" at Mod_Teste.v(10) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 10
-Warning (10034): Output port "HEX3" at Mod_Teste.v(10) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 10
-Warning (10034): Output port "HEX4" at Mod_Teste.v(10) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 10
-Warning (10034): Output port "HEX5" at Mod_Teste.v(10) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 10
-Warning (10034): Output port "HEX6" at Mod_Teste.v(10) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 10
-Warning (10034): Output port "HEX7" at Mod_Teste.v(10) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 10
-Warning (10034): Output port "LEDG[8..1]" at Mod_Teste.v(11) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 11
-Warning (10034): Output port "LEDR[17..4]" at Mod_Teste.v(12) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
-Warning (10034): Output port "UART_TXD" at Mod_Teste.v(14) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
-Info (12128): Elaborating entity "LCD_TEST" for hierarchy "LCD_TEST:MyLCD" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 36
-Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(60): truncated value with size 32 to match size of target (18) File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 60
-Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(69): truncated value with size 32 to match size of target (6) File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 69
-Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(71): truncated value with size 32 to match size of target (6) File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 71
-Info (12128): Elaborating entity "LCD_Controller" for hierarchy "LCD_TEST:MyLCD|LCD_Controller:u0" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 144
-Warning (10230): Verilog HDL assignment warning at LCD_Controller.v(66): truncated value with size 32 to match size of target (5) File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_Controller.v Line: 66
-Info (12128): Elaborating entity "ULA" for hierarchy "ULA:minha_ula" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 46
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 726 megabytes
-    Info: Processing ended: Wed Mar 22 16:50:41 2023
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:51
+Error (10228): Verilog HDL error at LCD_TEST2.v(1): module "LCD_TEST" cannot be declared more than once File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 1
+Info (10499): HDL info at LCD_TEST2.v(1): see declaration for object "LCD_TEST" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 1
+Error (10112): Ignored design unit "LCD_Controller" at LCD_Controller.v(1) due to previous errors File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_Controller.v Line: 1
+Error (10112): Ignored design unit "Mod_Teste" at Mod_Teste.v(6) due to previous errors File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 6
+Info (12021): Found 0 design units, including 0 entities, in source file Mod_Teste.v
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
+    Error: Peak virtual memory: 412 megabytes
+    Error: Processing ended: Wed Mar 22 19:59:23 2023
+    Error: Elapsed time: 00:00:15
+    Error: Total CPU time (on all processors): 00:00:36
 
 

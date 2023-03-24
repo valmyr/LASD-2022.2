@@ -1,5 +1,5 @@
 Flow report for Mod_Teste
-Wed Mar 22 16:50:41 2023
+Wed Mar 22 19:59:23 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-----------------------------+------------------------------------------------+
-; Flow Status                 ; Successful - Wed Mar 22 16:50:41 2023          ;
+; Flow Status                 ; Flow Failed - Wed Mar 22 19:59:23 2023         ;
 ; Quartus Prime Version       ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name               ; Mod_Teste                                      ;
 ; Top-level Entity Name       ; Mod_Teste                                      ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/22/2023 16:50:18 ;
+; Start date & time ; 03/22/2023 19:59:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Mod_Teste           ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 102021912011846.167951461806791        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 102021912011846.167952594812510        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -87,33 +87,37 @@ https://fpgasoftware.intel.com/eula.
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
+; VERILOG_INPUT_VERSION               ; SystemVerilog_2005                     ; Verilog_2001  ; --          ; --                                ;
+; VERILOG_SHOW_LMF_MAPPING_MESSAGES   ; Off                                    ; --            ; --          ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:24     ; 1.0                     ; 726 MB              ; 00:00:51                           ;
-; Total                  ; 00:00:24     ; --                      ; --                  ; 00:00:51                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 412 MB              ; 00:00:35                           ;
+; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:35                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                            ;
-+------------------------+------------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname       ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------------+------------+------------+----------------+
-; Analysis & Elaboration ; valmyr-Aspire-A515-41G ; Linux Mint ; 21         ; x86_64         ;
-+------------------------+------------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++----------------------+------------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname       ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------------+------------+------------+----------------+
+; Analysis & Synthesis ; valmyr-Aspire-A515-41G ; Linux Mint ; 21         ; x86_64         ;
++----------------------+------------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off Mod_Teste -c Mod_Teste --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off Mod_Teste -c Mod_Teste
 
 
 
