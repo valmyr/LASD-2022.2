@@ -1,8 +1,8 @@
 `default_nettype none //Comando para desabilitar declaração automática de wires
 `include "./Sprint1/ULA.sv"
-`include "./Sprint2/decod_hex_2seg.sv"
-`include "./LCD_TEST2.v"
-`include "./LCD_Controller.v"
+`include "./Sprint2/decod_hexa2_7seg.sv"
+//`include "./LCD_TEST2.v"
+//`include "./LCD_Controller.v"
 
 module Mod_Teste (
 //Clocks
@@ -40,7 +40,7 @@ LCD_TEST MyLCD (
 );
 //---------- modifique a partir daqui  --------
 
-//---------- Unidade Lógica Aritmétricas -------
+//---------- Unidade Lógica Aritmétrica -------
 // ULA minha_ula(
 //     .sel        (       SW      [17]     ),
 //     .input_a    (       SW      [3:0]    ),

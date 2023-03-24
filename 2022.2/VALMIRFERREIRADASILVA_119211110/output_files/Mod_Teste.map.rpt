@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Mod_Teste
-Wed Mar 22 19:59:23 2023
+Thu Mar 23 22:14:34 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -10,7 +10,19 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Mod_Teste|LCD_TEST:MyLCD|mLCD_ST
+  9. State Machine - |Mod_Teste|LCD_TEST:MyLCD|LCD_Controller:u0|ST
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: LCD_TEST:MyLCD
+ 14. Parameter Settings for User Entity Instance: LCD_TEST:MyLCD|LCD_Controller:u0
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +46,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                 ;
-+-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Wed Mar 22 19:59:23 2023              ;
-; Quartus Prime Version       ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
-; Revision Name               ; Mod_Teste                                      ;
-; Top-level Entity Name       ; Mod_Teste                                      ;
-; Family                      ; Cyclone V                                      ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
-; Total registers             ; N/A until Partition Merge                      ;
-; Total pins                  ; N/A until Partition Merge                      ;
-; Total virtual pins          ; N/A until Partition Merge                      ;
-; Total block memory bits     ; N/A until Partition Merge                      ;
-; Total PLLs                  ; N/A until Partition Merge                      ;
-; Total DLLs                  ; N/A until Partition Merge                      ;
-+-----------------------------+------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Mar 23 22:14:34 2023          ;
+; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                   ; Mod_Teste                                      ;
+; Top-level Entity Name           ; Mod_Teste                                      ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 51                                             ;
+; Total pins                      ; 194                                            ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -149,11 +166,193 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                            ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                  ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+; LCD_TEST2.v                      ; yes             ; User Verilog HDL File              ; /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v                 ;         ;
+; LCD_Controller.v                 ; yes             ; User Verilog HDL File              ; /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_Controller.v            ;         ;
+; Mod_Teste.v                      ; yes             ; User Verilog HDL File              ; /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v                 ;         ;
+; ./Sprint1/ULA.sv                 ; yes             ; Auto-Found SystemVerilog HDL File  ; /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Sprint1/ULA.sv              ;         ;
+; ./Sprint2/decod_hexa2_7seg.sv    ; yes             ; Auto-Found SystemVerilog HDL File  ; /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Sprint2/decod_hexa2_7seg.sv ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 38             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 57             ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 17             ;
+;     -- 5 input functions                    ; 10             ;
+;     -- 4 input functions                    ; 4              ;
+;     -- <=3 input functions                  ; 26             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 51             ;
+;                                             ;                ;
+; I/O pins                                    ; 194            ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 51             ;
+; Total fan-out                               ; 717            ;
+; Average fan-out                             ; 1.24           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name    ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+----------------+--------------+
+; |Mod_Teste                 ; 57 (0)              ; 51 (0)                    ; 0                 ; 0          ; 194  ; 0            ; |Mod_Teste                                  ; Mod_Teste      ; work         ;
+;    |LCD_TEST:MyLCD|        ; 57 (43)             ; 51 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |Mod_Teste|LCD_TEST:MyLCD                   ; LCD_TEST       ; work         ;
+;       |LCD_Controller:u0|  ; 14 (14)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |Mod_Teste|LCD_TEST:MyLCD|LCD_Controller:u0 ; LCD_Controller ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------+
+; State Machine - |Mod_Teste|LCD_TEST:MyLCD|mLCD_ST                                  ;
++----------------+----------------+----------------+----------------+----------------+
+; Name           ; mLCD_ST.000011 ; mLCD_ST.000010 ; mLCD_ST.000001 ; mLCD_ST.000000 ;
++----------------+----------------+----------------+----------------+----------------+
+; mLCD_ST.000000 ; 0              ; 0              ; 0              ; 0              ;
+; mLCD_ST.000001 ; 0              ; 0              ; 1              ; 1              ;
+; mLCD_ST.000010 ; 0              ; 1              ; 0              ; 1              ;
+; mLCD_ST.000011 ; 1              ; 0              ; 0              ; 1              ;
++----------------+----------------+----------------+----------------+----------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------+
+; State Machine - |Mod_Teste|LCD_TEST:MyLCD|LCD_Controller:u0|ST ;
++-------+-------+-------+-------+--------------------------------+
+; Name  ; ST.11 ; ST.10 ; ST.01 ; ST.00                          ;
++-------+-------+-------+-------+--------------------------------+
+; ST.00 ; 0     ; 0     ; 0     ; 0                              ;
+; ST.01 ; 0     ; 0     ; 1     ; 1                              ;
+; ST.10 ; 0     ; 1     ; 0     ; 1                              ;
+; ST.11 ; 1     ; 0     ; 0     ; 1                              ;
++-------+-------+-------+-------+--------------------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; LCD_TEST:MyLCD|mLCD_ST~8              ; Lost fanout        ;
+; LCD_TEST:MyLCD|mLCD_ST~9              ; Lost fanout        ;
+; LCD_TEST:MyLCD|mLCD_ST~10             ; Lost fanout        ;
+; LCD_TEST:MyLCD|mLCD_ST~11             ; Lost fanout        ;
+; LCD_TEST:MyLCD|mLCD_ST~12             ; Lost fanout        ;
+; LCD_TEST:MyLCD|mLCD_ST~13             ; Lost fanout        ;
+; LCD_TEST:MyLCD|LCD_Controller:u0|ST~8 ; Lost fanout        ;
+; LCD_TEST:MyLCD|LCD_Controller:u0|ST~9 ; Lost fanout        ;
+; Total Number of Removed Registers = 8 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 51    ;
+; Number of registers using Synchronous Clear  ; 18    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 51    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 43    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Mod_Teste|LCD_TEST:MyLCD|Selector2 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LCD_TEST:MyLCD ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; LCD_INTIAL     ; 0     ; Signed Integer                     ;
+; LCD_RESTART    ; 4     ; Signed Integer                     ;
+; LCD_LINE1      ; 5     ; Signed Integer                     ;
+; LCD_CH_LINE    ; 21    ; Signed Integer                     ;
+; LCD_LINE2      ; 22    ; Signed Integer                     ;
+; LUT_SIZE       ; 37    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LCD_TEST:MyLCD|LCD_Controller:u0 ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; CLK_Divide     ; 16    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 51                          ;
+;     CLR               ; 8                           ;
+;     ENA CLR           ; 25                          ;
+;     ENA CLR SCLR      ; 18                          ;
+; arriav_io_obuf        ; 80                          ;
+; arriav_lcell_comb     ; 59                          ;
+;     arith             ; 18                          ;
+;         1 data inputs ; 18                          ;
+;     normal            ; 41                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 4                           ;
+;         5 data inputs ; 10                          ;
+;         6 data inputs ; 17                          ;
+; boundary_port         ; 194                         ;
+;                       ;                             ;
+; Max LUT depth         ; 2.70                        ;
+; Average LUT depth     ; 0.97                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,7 +361,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Wed Mar 22 19:59:08 2023
+    Info: Processing started: Thu Mar 23 22:14:10 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mod_Teste -c Mod_Teste
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -170,15 +369,171 @@ Info (12021): Found 1 design units, including 1 entities, in source file LCD_TES
     Info (12023): Found entity 1: LCD_TEST File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file LCD_Controller.v
     Info (12023): Found entity 1: LCD_Controller File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_Controller.v Line: 1
-Error (10228): Verilog HDL error at LCD_TEST2.v(1): module "LCD_TEST" cannot be declared more than once File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 1
-Info (10499): HDL info at LCD_TEST2.v(1): see declaration for object "LCD_TEST" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 1
-Error (10112): Ignored design unit "LCD_Controller" at LCD_Controller.v(1) due to previous errors File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_Controller.v Line: 1
-Error (10112): Ignored design unit "Mod_Teste" at Mod_Teste.v(6) due to previous errors File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 6
-Info (12021): Found 0 design units, including 0 entities, in source file Mod_Teste.v
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 412 megabytes
-    Error: Processing ended: Wed Mar 22 19:59:23 2023
-    Error: Elapsed time: 00:00:15
-    Error: Total CPU time (on all processors): 00:00:36
+Info (12021): Found 3 design units, including 3 entities, in source file Mod_Teste.v
+    Info (12023): Found entity 1: ULA File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Sprint1/ULA.sv Line: 1
+    Info (12023): Found entity 2: decod_hexa2_7seg File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Sprint2/decod_hexa2_7seg.sv Line: 1
+    Info (12023): Found entity 3: Mod_Teste File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 7
+Info (12127): Elaborating entity "Mod_Teste" for the top level hierarchy
+Warning (10034): Output port "HEX0" at Mod_Teste.v(14) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+Warning (10034): Output port "HEX1" at Mod_Teste.v(14) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+Warning (10034): Output port "HEX2" at Mod_Teste.v(14) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+Warning (10034): Output port "HEX3" at Mod_Teste.v(14) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+Warning (10034): Output port "HEX4" at Mod_Teste.v(14) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+Warning (10034): Output port "HEX5" at Mod_Teste.v(14) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+Warning (10034): Output port "HEX6" at Mod_Teste.v(14) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+Warning (10034): Output port "HEX7" at Mod_Teste.v(14) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+Warning (10034): Output port "LEDG" at Mod_Teste.v(15) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 15
+Warning (10034): Output port "LEDR" at Mod_Teste.v(16) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+Warning (10034): Output port "UART_TXD" at Mod_Teste.v(18) has no driver File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 18
+Info (12128): Elaborating entity "LCD_TEST" for hierarchy "LCD_TEST:MyLCD" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 40
+Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(60): truncated value with size 32 to match size of target (18) File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 60
+Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(69): truncated value with size 32 to match size of target (6) File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 69
+Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(71): truncated value with size 32 to match size of target (6) File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 71
+Info (12128): Elaborating entity "LCD_Controller" for hierarchy "LCD_TEST:MyLCD|LCD_Controller:u0" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 144
+Warning (10230): Verilog HDL assignment warning at LCD_Controller.v(66): truncated value with size 32 to match size of target (5) File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_Controller.v Line: 66
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[0]" and its non-tri-state driver. File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[1]" and its non-tri-state driver. File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[2]" and its non-tri-state driver. File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[3]" and its non-tri-state driver. File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[4]" and its non-tri-state driver. File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[5]" and its non-tri-state driver. File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[6]" and its non-tri-state driver. File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[7]" and its non-tri-state driver. File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "LCD_DATA[0]~synth" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13010): Node "LCD_DATA[1]~synth" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13010): Node "LCD_DATA[2]~synth" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13010): Node "LCD_DATA[3]~synth" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13010): Node "LCD_DATA[4]~synth" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13010): Node "LCD_DATA[5]~synth" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13010): Node "LCD_DATA[6]~synth" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+    Warning (13010): Node "LCD_DATA[7]~synth" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 20
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX6[6]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX6[5]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX6[4]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX6[3]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX6[2]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX6[1]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX6[0]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX7[6]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX7[5]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX7[4]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX7[3]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX7[2]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX7[1]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "HEX7[0]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 14
+    Warning (13410): Pin "LEDG[0]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 15
+    Warning (13410): Pin "LEDG[1]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 15
+    Warning (13410): Pin "LEDG[2]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 15
+    Warning (13410): Pin "LEDG[3]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 15
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 15
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 15
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 15
+    Warning (13410): Pin "LEDG[7]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 15
+    Warning (13410): Pin "LEDG[8]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 15
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 16
+    Warning (13410): Pin "UART_TXD" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 18
+    Warning (13410): Pin "LCD_ON" is stuck at VCC File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 21
+    Warning (13410): Pin "LCD_BLON" is stuck at VCC File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 21
+    Warning (13410): Pin "LCD_RW" is stuck at GND File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 21
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 23 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_27" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 9
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 11
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 11
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 11
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[10]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[11]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[12]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[13]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[14]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[15]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[16]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[17]" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 12
+    Warning (15610): No output dependent on input pin "UART_RXD" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 19
+Info (21057): Implemented 252 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 25 input pins
+    Info (21059): Implemented 89 output pins
+    Info (21060): Implemented 80 bidirectional pins
+    Info (21061): Implemented 58 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 146 warnings
+    Info: Peak virtual memory: 480 megabytes
+    Info: Processing ended: Thu Mar 23 22:14:34 2023
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:49
 
 
