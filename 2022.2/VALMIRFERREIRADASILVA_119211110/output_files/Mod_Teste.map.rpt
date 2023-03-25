@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Mod_Teste
-Fri Mar 24 22:21:44 2023
+Fri Mar 24 22:40:25 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -50,7 +50,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Mar 24 22:21:44 2023          ;
+; Analysis & Synthesis Status     ; Successful - Fri Mar 24 22:40:25 2023          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; Mod_Teste                                      ;
 ; Top-level Entity Name           ; Mod_Teste                                      ;
@@ -368,7 +368,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -378,7 +378,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Fri Mar 24 22:21:24 2023
+    Info: Processing started: Fri Mar 24 22:39:58 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mod_Teste -c Mod_Teste
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -409,9 +409,9 @@ Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(71): truncated va
 Info (12128): Elaborating entity "LCD_Controller" for hierarchy "LCD_TEST:MyLCD|LCD_Controller:u0" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_TEST2.v Line: 144
 Warning (10230): Verilog HDL assignment warning at LCD_Controller.v(66): truncated value with size 32 to match size of target (5) File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/LCD_Controller.v Line: 66
 Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:meu_registrador" File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 70
-Warning (10230): Verilog HDL assignment warning at RegisterFile.sv(14): truncated value with size 32 to match size of target (8) File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Sprint3/RegisterFile.sv Line: 14
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "RegisterFile:meu_registrador|mem" is uninferred due to asynchronous read logic File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Sprint3/RegisterFile.sv Line: 12
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/db/Mod_Teste.ram0_RegisterFile_878b6b30.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[0]" and its non-tri-state driver. File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 21
     Warning (13035): Inserted always-enabled tri-state buffer between "LCD_DATA[1]" and its non-tri-state driver. File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Mod_Teste.v Line: 21
@@ -533,9 +533,9 @@ Info (21057): Implemented 397 device resources after synthesis - the final resou
     Info (21060): Implemented 80 bidirectional pins
     Info (21061): Implemented 203 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 128 warnings
-    Info: Peak virtual memory: 477 megabytes
-    Info: Processing ended: Fri Mar 24 22:21:44 2023
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:44
+    Info: Peak virtual memory: 480 megabytes
+    Info: Processing ended: Fri Mar 24 22:40:25 2023
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:52
 
 

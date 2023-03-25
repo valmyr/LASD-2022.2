@@ -10,9 +10,8 @@ module RegisterFile#(parameter WIDTH = 8)(
 
 );
     logic [WIDTH-1:0] mem[WIDTH-1:0];
-    initial mem[0] = 0;
-    always_ff@(posedge clk)
-        if(we3) mem[wa3] <= (wa3 == 3'b0) ? 3'b0 : wd3;
+    initial mem[0]=0;
+    always_ff@(posedge clk) if(we3) mem[wa3] <= wd3;
     assign rd1 = mem[ra1];
     assign rd2 = mem[ra2];
 endmodule
