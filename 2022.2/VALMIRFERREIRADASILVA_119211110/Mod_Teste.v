@@ -1,10 +1,9 @@
 `default_nettype none //Comando para desabilitar declaração automática de wires
 `include "./Sprint1/ULA.sv"
-`include "./Sprint2/decod_hexa2_7seg.sv"
+// `include "./Sprint2/decod_hex_2seg.sv"
+// `include "./LCD_TEST2.v"
+// `include "./LCD_Controller.v"
 `include "./Sprint3/RegisterFile.sv"
-
-//`include "./LCD_TEST2.v"
-//`include "./LCD_Controller.v"
 
 module Mod_Teste (
 //Clocks
@@ -40,29 +39,33 @@ LCD_TEST MyLCD (
 .LCD_EN ( LCD_EN ),
 .LCD_RS ( LCD_RS )
 );
-//------------------Sprint1-------------------
 //---------- modifique a partir daqui  --------
-
-//---------- Unidade Lógica Aritmétrica -------
-// ULA minha_ula(
-//     .sel        (       SW      [17]     ),
-//     .input_a    (       SW      [3:0]    ),
-//     .input_b    (       SW      [7:4]    ),
-//     .output_s   (       LEDR    [3:0]    ),
-//     .ovf        (       LEDG    [0]      )
-// );
-//----------------------------------------------
-//------------------Sprint1-------------------
-//-----------------Banco de Registradores-------
+//------------------Sprint1---------------------
+//---------- Unidade Lógica Aritmétricas -------
 /*
+ULA minha_ula(
+    .sel        (       SW      [17]     ),
+    .input_a    (       SW      [3:0]    ),
+    .input_b    (       SW      [7:4]    ),
+    .output_s   (       LEDR    [3:0]    ),
+    .ovf        (       LEDG    [0]      )
+);
+*/
+//----------------------------------------------
+//------------------Sprint2---------------------
+
+
+//------------------Sprint3---------------------
+//-----------------Banco de Registradores-------
+
 RegisterFile meu_registrador(
 			.clk		(		KEY[    1]	),
 			.we3		(		SW [   17]	),
 			.wa3		(		SW [16:14]	),
 			.ra1		(		SW [13:11]	),
 			.ra2		(		SW [10: 8] 	),
-			.wd3		(		SW	[7	: 0]	),
+			.wd3		(		SW	[7	: 0]),
 			.rd1		(		w_d0x0[7:0]	),
 			.rd2		(		w_d0x1[7:0]	)
-)*/
+);
 endmodule
