@@ -35,6 +35,10 @@ module tb;
         #1@(negedge clk) {we3,ra1,ra2,wa3,wd3} = 18'b1_000_101_111_11111111;
 
         #1@(negedge clk) {we3,ra1,ra2,wa3,wd3} = 18'b1_011_011_011_10001010;
+        #5@(negedge clk) {we3,ra1,ra2,wa3,wd3} = 18'b0_000_000_001_10001010;
+        #7@(negedge clk) {we3,ra1,ra2,wa3,wd3} = 18'b1_000_000_000_10001010;
+        #9@(negedge clk) {we3,ra1,ra2,wa3,wd3} = 18'b0_000_000_001_10001010;
+
 
 
         #20$finish;
