@@ -1,9 +1,11 @@
 `default_nettype none //Comando para desabilitar declaração automática de wires
+//`include "./LCD_TEST2.v"
+//`include "./LCD_Controller.v"
 `include "./Sprint1/ULA.sv"
-// `include "./Sprint2/decod_hex_2seg.sv"
-// `include "./LCD_TEST2.v"
-// `include "./LCD_Controller.v"
+`include "./Sprint2/decod_hexa2_7seg.sv"
 `include "./Sprint3/RegisterFile.sv"
+`include "./Sprint4/Ula.sv"
+
 
 module Mod_Teste (
 //Clocks
@@ -58,14 +60,37 @@ ULA minha_ula(
 //------------------Sprint3---------------------
 //-----------------Banco de Registradores-------
 
+// RegisterFile meu_registrador(
+// 			.clk		(		KEY[    1]	),
+// 			.we3		(		SW [   17]	),
+// 			.wa3		(		SW [16:14]	),
+// 			.ra1		(		SW [13:11]	),
+// 			.ra2		(		SW [10: 8] 	),
+// 			.wd3		(		SW	[7	: 0]),
+// 			.rd1		(		w_d0x0[7:0]	),
+// 			.rd2		(		w_d0x1[7:0]	)
+// );
+
+//------------------Sprint4---------------------
+//-----_-Banco de Registradores + ULA 5OP-------
+
+logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3;
 RegisterFile meu_registrador(
-			.clk		(		KEY[    1]	),
-			.we3		(		SW [   17]	),
-			.wa3		(		SW [16:14]	),
-			.ra1		(		SW [13:11]	),
-			.ra2		(		SW [10: 8] 	),
-			.wd3		(		SW	[7	: 0]),
-			.rd1		(		w_d0x0[7:0]	),
-			.rd2		(		w_d0x1[7:0]	)
+			.clk		(		KEY[    1]				),
+			.we3		(		1'b1					),
+			.wa3		(		SW [16:14]				),
+			.ra1		(		SW [13:11]				),
+			.ra2		(		3'b010	 				),
+			.wd3		(		SW	[7	: 0]			),
+			.rd1		(		w_rd1SrcA				),
+			.rd2		(		w_rd2     				)
 );
+ula minha_ula_5o(
+			.ScrA		(		w_rd1SrcA				),
+			.ScrB		(		w_SrcB               	),
+			.ULAControl	(		SW[10:8]				),
+			.Z			(		LEDG[0]					),
+			.ULAResult  (		w_ULAResultWd3			)
+);
+assign w_SrcB = SW[17] ? 8'h07 : w_rd2;
 endmodule
