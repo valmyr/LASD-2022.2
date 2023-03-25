@@ -39,5 +39,4 @@ module tb;
         $display("pass : fail");
         $display("%d    : %d ",pass_test,pass_fail);
     end
-
 endmodule
