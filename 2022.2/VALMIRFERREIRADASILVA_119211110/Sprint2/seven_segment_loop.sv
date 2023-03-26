@@ -1,4 +1,4 @@
-`include "count_M10.sv"
+// `include "count_M10.sv"
 module seven_segment_loop(
     input  logic clk,
     output logic [6:0] pinoutdisplay7segment
