@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at frequencydivider.sv(9): always construct contains both blocking and non-blocking assignments File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Sprint2/frequencydivider.sv Line: 9
+Warning (10268): Verilog HDL information at count_M10.sv(6): always construct contains both blocking and non-blocking assignments File: /home/valmyr/Documentos/GitHub/LASD-2022.2/2022.2/VALMIRFERREIRADASILVA_119211110/Sprint2/count_M10.sv Line: 6

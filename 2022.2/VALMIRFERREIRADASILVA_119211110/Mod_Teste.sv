@@ -1,6 +1,6 @@
 `default_nettype none //Comando para desabilitar declaração automática de wires
-`include "./LCD_TEST2.v"
-`include "./LCD_Controller.v"
+`include "./LCD_TEST2.sv"
+`include "./LCD_Controller.sv"
 `include "./Sprint1/ULA.sv"
 `include "./Sprint2/decod_hexa2_7seg.sv"
 `include "./Sprint2/seven_segment_loop.sv"
@@ -11,6 +11,7 @@
 `include "./Sprint5/ControlUnit.sv"
 `include "./Sprint5/InstrMemory.sv"
 `include "./Sprint5/PC.sv"
+`include "./Sprint5/CPU v0.1.sv"
 
 
 module Mod_Teste (
@@ -105,7 +106,9 @@ ULA minha_ula(
 //------------------Sprint5--------------------------
 //-------            CPU v0.1            ------------
 
-
+    CPUv010 myCPU(
+        .clk    (   CLOCK_50     )
+    );
 
 // --------------------------------------------------
 endmodule
