@@ -19,5 +19,5 @@ module decod_hexa2_7seg(
     assign map_leds[13] = 7'b011_1101; 
     assign map_leds[14] = 7'b100_1111;
     assign map_leds[15] = 7'b100_0111;
-    always_comb pinoutdisplay7segment = map_leds[bincode];
+    always_comb pinoutdisplay7segment = ~map_leds[bincode];
 endmodule

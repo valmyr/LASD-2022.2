@@ -5,7 +5,7 @@ module count_M10(
 );
     always_ff@(posedge clk)begin
         if(rst) counter_value = 0;
-        else if(counter_value == 10) counter_value <=  0;
+        else if(counter_value == 9) counter_value <=  0;
         else                         counter_value <= counter_value + 1; 
     end
 endmodule

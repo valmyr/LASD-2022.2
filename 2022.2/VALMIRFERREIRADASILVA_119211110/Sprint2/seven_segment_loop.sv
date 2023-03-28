@@ -19,5 +19,5 @@ module seven_segment_loop(
         .counter_value  (   counter_value   )
     );
     assign rst = (counter_value == 7) ? 1 : 0;
-    assign pinoutdisplay7segment = map_leds[counter_value];
+    assign pinoutdisplay7segment = ~map_leds[counter_value];
 endmodule
