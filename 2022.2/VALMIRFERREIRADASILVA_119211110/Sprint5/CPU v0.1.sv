@@ -18,20 +18,18 @@ module CPUv010(
     logic [7 :0] w_ULAResultWd3 ;
     logic [7 :0] w_rd2          ;
     logic        w_RegWrite     ;
-
-
     assign w_wa3  = ( w_RegDst ) ? w_Inst[20:16] : w_Inst[15:11];
     assign w_SrcB = ( w_ULASrc ) ? w_rd2         : w_Inst[7 : 0];
-    always_comb w_PCp1 = w_PC + 1;
+    assign w_PCp1 = w_PC + 1;
     PC myPC(
-                .clk        (       clk         ),
-                .PCin       (       w_PCp1      ),
-                .PCout      (        w_PC    )
+                .clk        (        clk                ),
+                .PCin       (        w_PCp1             ),
+                .PCout      (        w_PC               )
     );
 
     InstrMemory myInstrMemory(
-                .address    (   w_PC    ),
-                .RD         (   w_Inst  )
+                .address    (       w_PC                ),
+                .RD         (       w_Inst              )
     );
     control_unit myULAControl(
                 .OP         (       w_Inst[31:26]       ),
@@ -54,9 +52,9 @@ module CPUv010(
     );
     ula myULA   (
 
-                .ScrB       (   w_SrcB          ),
-                .ScrA       (   w_rd1SrcA       ),
-                .ULAControl (   w_ULAControl    ),
-                .ULAResult  (   w_ULAResultWd3  )
+                .ScrB       (       w_SrcB              ),
+                .ScrA       (       w_rd1SrcA           ),
+                .ULAControl (       w_ULAControl        ),
+                .ULAResult  (       w_ULAResultWd3      )
     );
 endmodule

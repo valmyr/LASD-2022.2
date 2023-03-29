@@ -1,6 +1,6 @@
 `default_nettype none //Comando para desabilitar declaração automática de wires
-`include "./LCD_TEST2.sv"
-`include "./LCD_Controller.sv"
+//`include "./LCD_TEST2.v"
+//`include "./LCD_Controller.v"
 `include "./Sprint1/ULA.sv"
 `include "./Sprint2/decod_hexa2_7seg.sv"
 `include "./Sprint2/seven_segment_loop.sv"
@@ -49,17 +49,20 @@ LCD_TEST MyLCD (
 .LCD_RS ( LCD_RS )
 );
 //---------- modifique a partir daqui  --------
+
+
+
+
 //------------------Sprint1---------------------
 //---------- Unidade Lógica Aritmétricas -------
-/*
-ULA minha_ula(
-    .sel        (       SW      [17]     ),
-    .input_a    (       SW      [3:0]    ),
-    .input_b    (       SW      [7:4]    ),
-    .output_s   (       LEDR    [3:0]    ),
-    .ovf        (       LEDG    [0]      )
-);
-*/
+// ULA minha_ula(
+//     .sel        (       SW      [17]     ),
+//     .input_a    (       SW      [3:0]    ),
+//     .input_b    (       SW      [7:4]    ),
+//     .output_s   (       LEDR    [3:0]    ),
+//     .ovf        (       LEDG    [0]      )
+// );
+
 //----------------------------------------------
 //------------------Sprint2---------------------
 
@@ -68,14 +71,14 @@ ULA minha_ula(
 //-----------------Banco de Registradores-------
 
 // RegisterFile meu_registrador(
-// 			.clk		(		KEY[    1]	),
-// 			.we3		(		SW [   17]	),
-// 			.wa3		(		SW [16:14]	),
-// 			.ra1		(		SW [13:11]	),
-// 			.ra2		(		SW [10: 8] 	),
-// 			.wd3		(		SW	[7	: 0]),
-// 			.rd1		(		w_d0x0[7:0]	),
-// 			.rd2		(		w_d0x1[7:0]	)
+// 	.clk		(		KEY[    1]	    ),
+// 	.we3		(		SW [   17]	    ),
+// 	.wa3		(		SW [16:14]	    ),
+// 	.ra1		(		SW [13:11]	    ),
+// 	.ra2		(		SW [10: 8] 	    ),
+// 	.wd3		(		SW	[7	: 0]    ''),
+// 	.rd1		(		w_d0x0[7:0]	    ),
+// 	.rd2		(		w_d0x1[7:0]	    )
 // );
 
 //------------------Sprint4---------------------
@@ -83,21 +86,21 @@ ULA minha_ula(
 
 // logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3;
 // RegisterFile meu_registrador(
-// 			.clk		(		KEY[    1]				),
-// 			.we3		(		1'b1					),
-// 			.wa3		(		SW [16:14]				),
-// 			.ra1		(		SW [13:11]				),
-// 			.ra2		(		3'b010	 				),
-// 			.wd3		(		SW	[7	: 0]			),
-// 			.rd1		(		w_rd1SrcA				),
-// 			.rd2		(		w_rd2     				)
+// 	.clk		(		KEY[    1]		),
+// 	.we3		(		1'b1			   ),
+// 	.wa3		(		SW [16:14]		),
+// 	.ra1		(		SW [13:11]		),
+// 	.ra2		(		3'b010	 		),
+// 	.wd3		(		SW	[7	: 0]	   ),
+// 	.rd1		(		w_rd1SrcA		),
+// 	.rd2		(		w_rd2     		)
 // );
 // ula minha_ula_5o(
-// 			.ScrA		(		w_rd1SrcA				),
-// 			.ScrB		(		w_SrcB               	),
-// 			.ULAControl	(		SW[10:8]				),
-// 			.Z			(		LEDG[0]					),
-// 			.ULAResult  (		w_ULAResultWd3			)
+// 	.ScrA		(		w_rd1SrcA		),
+// 	.ScrB		(		w_SrcB          ),
+// 	.ULAControl	(		SW[10:8]		),
+// 	.Z			(		LEDG[0]			),
+// 	.ULAResult  (		w_ULAResultWd3	)
 // );
 // assign w_SrcB = SW[17] ? 8'h07 : w_rd2;
 
@@ -106,9 +109,9 @@ ULA minha_ula(
 //------------------Sprint5--------------------------
 //-------            CPU v0.1            ------------
 
-    CPUv010 myCPU(
-        .clk    (   CLOCK_50     )
-    );
+// CPUv010 myCPU(
+//    .clk    (   CLOCK_50     )
+// );
 
 // --------------------------------------------------
 endmodule
