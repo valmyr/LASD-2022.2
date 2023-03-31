@@ -2,13 +2,13 @@ module piramide(
     input  logic clk,
                  rst,
     input  logic [3:0] max,
-    output logic [3:0] outputM
+    output logic [3:0] outputM_
 );
+
     logic S, R, qLatch;
-    logic [3:0] outputM_;
-    assign      S = (max     == outputM); // ~ set value latch
+    logic [3:0] outputM;
+    assign      S = (outputM== 15); // ~ set value latch
     assign      R = (outputM ==       0); // Reset value latch
-    assign      outputM_ = outputM;
     always_comb begin : Latch_RS
         case({S,R})
             1:qLatch = 0;
@@ -24,5 +24,5 @@ module piramide(
         else
             outputM <= (qLatch) ?  (outputM - 1):(outputM + 1);
     end
-
+    assign      outputM_ = outputM  < max ? outputM : max;
 endmodule

@@ -8,7 +8,7 @@ module tb;
     piramide instp(
             .clk    (   clk  ),
             .max    (   max  ),
-            .outputM(   outp ),
+            .outputM_(   outp ),
             .rst    (   rst )
 
     );
@@ -19,7 +19,8 @@ module tb;
         $dumpfile("pi.vcd");
         $dumpvars (0,instp);
         @(negedge clk) {rst,max} =  5'b10111;
-        @(negedge clk) {rst,max} =  5'b00111;
+        @(negedge clk) {rst,max} =  5'b00100;
+
 
         #100 $finish;
     end
