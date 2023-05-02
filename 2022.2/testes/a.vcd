@@ -1,0 +1,63 @@
+$date
+	Tue Apr 18 01:58:49 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb $end
+$scope module p1 $end
+$var wire 8 ! din [7:0] $end
+$var wire 1 " rst $end
+$var reg 1 # d $end
+$var reg 8 $ dout [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11000110 $
+x#
+1"
+b11000110 !
+$end
+#1
+b1100011 $
+0#
+b0 !
+0"
+#2
+b11000111 $
+b11000111 !
+1"
+#3
+b1100011 $
+1#
+b0 !
+0"
+#4
+b11000110 $
+b11000110 !
+1"
+#5
+b1100011 $
+0#
+b0 !
+0"
+#6
+b11000111 $
+b11000111 !
+1"
+#7
+b1100011 $
+1#
+b0 !
+0"
+#8
+b0 $
+1"
+#9
+0#
+0"

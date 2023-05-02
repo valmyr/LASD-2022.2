@@ -10,9 +10,10 @@ module ula#(parameter WIDTH = 8)(
              0: ULAResult  = ScrA & ScrB     ;
              1: ULAResult  = ScrA | ScrB     ;
              2: ULAResult = ScrA + ScrB      ;
+             3: ULAResult = ~(ScrA | ScrB);
              6: ULAResult = ScrA + ~ScrB + 1 ;
              7: ULAResult = ScrA < ScrB      ;
 				 default ULAResult = 0;
     endcase
-    assign Z = (ULAControl == 0);
+    assign Z = (ULAResult == 0);
 endmodule

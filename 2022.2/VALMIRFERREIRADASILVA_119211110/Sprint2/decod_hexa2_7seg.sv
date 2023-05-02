@@ -7,7 +7,7 @@ module decod_hexa2_7seg(
     assign map_leds[ 1] = 7'b011_0000;
     assign map_leds[ 2] = 7'b110_1101;
     assign map_leds[ 3] = 7'b111_1001;
-    assign map_leds[ 4] = 7'b011_1011;
+    assign map_leds[ 4] = 7'b011_0011;
     assign map_leds[ 5] = 7'b101_1011;
     assign map_leds[ 6] = 7'b101_1111;
     assign map_leds[ 7] = 7'b111_0000;

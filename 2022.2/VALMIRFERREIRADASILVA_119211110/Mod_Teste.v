@@ -1,4 +1,4 @@
-`default_nettype none //Comando para desabilitar declaração automática de wires
+`default_nettype none //Comando para desabilitar declaraÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o automÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡tica de wires
 //`include "./LCD_TEST2.v"
 //`include "./LCD_Controller.v"
 `include "./Sprint1/ULA.sv"
@@ -54,7 +54,7 @@ LCD_TEST MyLCD (
 
 
 //------------------Sprint1---------------------
-//---------- Unidade Lógica Aritmétricas -------
+//---------- Unidade LÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³gica AritmÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©tricas -------
 // ULA minha_ula(
 //     .sel        (       SW      [17]     ),
 //     .input_a    (       SW      [3:0]    ),
@@ -65,8 +65,45 @@ LCD_TEST MyLCD (
 
 //----------------------------------------------
 //------------------Sprint2---------------------
+// wire w_clk_1hz, w_clk_12hz;
+// wire [3:0] w_counter_value;
+// assign HEX3[0:6] = SW[6:0];
+// assign LEDG[0] = w_clk_1hz;
+//  decod_hexa2_7seg mydecod_inst01(
+//          .bincode                (   SW  [11:8]    ),
+//          .pinoutdisplay7segment  (   HEX0[0: 6]    )
+    
+//  );
+// decod_hexa2_7seg mydecod_inst02(
+//         .bincode                (   w_counter_value    ),
+//         .pinoutdisplay7segment  (   HEX1[0: 6]    )
+// );
 
 
+// count_M10 mycount_M10_inst01(
+//     .clk            (   w_clk_1hz           ),
+//     .rst            (   KEY[3]              ),
+//     .counter_value  (    w_counter_value    )    
+// );
+// frequencydivider  #(     .flag_ovf_mytime ( 25000000 ))
+// myfreq_inst01(
+//     .clk    (   CLOCK_50   ),
+//     .rst    (   KEY[1]     ),
+//     .myclk  (   w_clk_1hz    )   
+// );
+
+// frequencydivider #(     .flag_ovf_mytime ( 4166667 ))
+// myfreq_inst02(
+//     .clk    (   CLOCK_50   ),
+//     .rst    (   KEY[1]     ),
+//     .myclk  (   w_clk_12hz    )   
+// );
+
+// seven_segment_loop myloop(
+
+//     .clk    (   w_clk_12hz   ),
+//     .pinoutdisplay7segment  ( HEX4[0: 6]  )
+// );
 //------------------Sprint3---------------------
 //-----------------Banco de Registradores-------
 
@@ -76,33 +113,48 @@ LCD_TEST MyLCD (
 // 	.wa3		(		SW [16:14]	    ),
 // 	.ra1		(		SW [13:11]	    ),
 // 	.ra2		(		SW [10: 8] 	    ),
-// 	.wd3		(		SW	[7	: 0]    ''),
+// 	.wd3		(		SW	[7	: 0]    ),
 // 	.rd1		(		w_d0x0[7:0]	    ),
+//     .rst        (       KEY[    2]      ),
 // 	.rd2		(		w_d0x1[7:0]	    )
 // );
+// decod_hexa2_7seg displayWD3_LSB(
+//         .bincode                (   SW[3:0]     ),
+//         .pinoutdisplay7segment  (   HEX0        )
+// );
 
-//------------------Sprint4---------------------
+// decod_hexa2_7seg displayWD3_MSB(
+//         .bincode                (   SW[7:4]     ),
+//         .pinoutdisplay7segment  (   HEX1        )
+// );
+//------------------Sprint4-----------------------
 //-------Banco de Registradores + ULA 5_OP-------
 
-// logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3;
-// RegisterFile meu_registrador(
-// 	.clk		(		KEY[    1]		),
-// 	.we3		(		1'b1			   ),
-// 	.wa3		(		SW [16:14]		),
-// 	.ra1		(		SW [13:11]		),
-// 	.ra2		(		3'b010	 		),
-// 	.wd3		(		SW	[7	: 0]	   ),
-// 	.rd1		(		w_rd1SrcA		),
-// 	.rd2		(		w_rd2     		)
-// );
-// ula minha_ula_5o(
-// 	.ScrA		(		w_rd1SrcA		),
-// 	.ScrB		(		w_SrcB          ),
-// 	.ULAControl	(		SW[10:8]		),
-// 	.Z			(		LEDG[0]			),
-// 	.ULAResult  (		w_ULAResultWd3	)
-// );
-// assign w_SrcB = SW[17] ? 8'h07 : w_rd2;
+logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3;
+RegisterFile meu_registrador(
+	.rst 		(			1			),
+	.clk		(		KEY[    1]		),
+	.we3		(		1'b1			),
+	.wa3		(		SW [16:14]		),
+	.ra1		(		SW [13:11]		),
+	.ra2		(		3'b010	 		),
+	.wd3		(		SW	[7	: 0]	),
+	.rd1		(		w_rd1SrcA		),
+	.rd2		(		w_rd2     		)
+);
+ula minha_ula_5o(
+	.ScrA		(		w_rd1SrcA		),
+	.ScrB		(		w_SrcB          ),
+	.ULAControl	(		SW[10:8]		),
+	.Z			(		LEDG[0]			),
+	.ULAResult  (		w_ULAResultWd3	)
+);
+assign LEDG[1] = KEY[1]				;
+assign w_d0x0 = w_rd1SrcA			;
+assign w_d1x0 = w_rd2				;
+assign w_d1x1 = w_SrcB				;
+assign w_d0x4 = w_ULAResultWd3		;
+assign w_SrcB = SW[17] ? 8'h07 : w_rd2;
 
 // --------------------------------------------------
 
@@ -112,6 +164,7 @@ LCD_TEST MyLCD (
 // CPUv010 myCPU(
 //    .clk    (   CLOCK_50     )
 // );
+// 110 & 011 => 010
 
 // --------------------------------------------------
 endmodule
