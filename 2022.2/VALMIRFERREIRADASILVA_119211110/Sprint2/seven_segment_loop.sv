@@ -17,7 +17,7 @@ module seven_segment_loop(
     count_M10 my_counter(
         .clk            (   clk            ),
         .rst            (   ~rst             ),
-        .counter_value  (   counter_value   )
+        .counter_value_  (   counter_value   )
     );
     assign rst = (counter_value == 5) ? 1 : 0;
     assign pinoutdisplay7segment = ~map_leds[counter_value];

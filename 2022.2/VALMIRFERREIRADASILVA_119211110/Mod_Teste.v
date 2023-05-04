@@ -1,6 +1,6 @@
 `default_nettype none //Comando para desabilitar declaraÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o automÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡tica de wires
-//`include "./LCD_TEST2.v"
-//`include "./LCD_Controller.v"
+`include "./LCD_TEST2.v"
+`include "./LCD_Controller.v"
 `include "./Sprint1/ULA.sv"
 `include "./Sprint2/decod_hexa2_7seg.sv"
 `include "./Sprint2/seven_segment_loop.sv"
@@ -11,7 +11,7 @@
 `include "./Sprint5/ControlUnit.sv"
 `include "./Sprint5/InstrMemory.sv"
 `include "./Sprint5/PC.sv"
-`include "./Sprint5/CPU v0.1.sv"
+//`include "./Sprint5/CPU v0.1.sv"
 
 
 module Mod_Teste (
@@ -130,41 +130,108 @@ LCD_TEST MyLCD (
 //------------------Sprint4-----------------------
 //-------Banco de Registradores + ULA 5_OP-------
 
-logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3;
-RegisterFile meu_registrador(
-	.rst 		(			1			),
-	.clk		(		KEY[    1]		),
-	.we3		(		1'b1			),
-	.wa3		(		SW [16:14]		),
-	.ra1		(		SW [13:11]		),
-	.ra2		(		3'b010	 		),
-	.wd3		(		SW	[7	: 0]	),
-	.rd1		(		w_rd1SrcA		),
-	.rd2		(		w_rd2     		)
-);
-ula minha_ula_5o(
-	.ScrA		(		w_rd1SrcA		),
-	.ScrB		(		w_SrcB          ),
-	.ULAControl	(		SW[10:8]		),
-	.Z			(		LEDG[0]			),
-	.ULAResult  (		w_ULAResultWd3	)
-);
-assign LEDG[1] = KEY[1]				;
-assign w_d0x0 = w_rd1SrcA			;
-assign w_d1x0 = w_rd2				;
-assign w_d1x1 = w_SrcB				;
-assign w_d0x4 = w_ULAResultWd3		;
-assign w_SrcB = SW[17] ? 8'h07 : w_rd2;
+// logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3;
+// RegisterFile meu_registrador(
+// 	.rst 		(			1			),
+// 	.clk		(		KEY[    1]		),
+// 	.we3		(		1'b1			),
+// 	.wa3		(		SW [16:14]		),
+// 	.ra1		(		SW [13:11]		),
+// 	.ra2		(		3'b010	 		),
+// 	.wd3		(		SW	[7	: 0]	),
+// 	.rd1		(		w_rd1SrcA		),
+// 	.rd2		(		w_rd2     		)
+// );
+// ula minha_ula_5o(
+// 	.ScrA		(		w_rd1SrcA		),
+// 	.ScrB		(		w_SrcB          ),
+// 	.ULAControl	(		SW[10:8]		),
+// 	.Z			(		LEDG[0]			),
+// 	.ULAResult  (		w_ULAResultWd3	)
+// );
+// assign LEDG[1] = KEY[1]				;
+// assign w_d0x0 = w_rd1SrcA			;
+// assign w_d1x0 = w_rd2				;
+// assign w_d1x1 = w_SrcB				;
+// assign w_d0x4 = w_ULAResultWd3		;
+// assign w_SrcB = SW[17] ? 8'h07 : w_rd2;
 
 // --------------------------------------------------
 
 //------------------Sprint5--------------------------
 //-------            CPU v0.1            ------------
 
-// CPUv010 myCPU(
-//    .clk    (   CLOCK_50     )
-// );
-// 110 & 011 => 010
+    wire [7 :0] w_PC           ;
+    wire [7 :0] w_PCp1         ;
+    wire [31:0] w_Inst         ;
+    wire [4 :0] w_wa3          ;
+    wire        w_RegDst       ;
+    wire [7 :0] w_SrcB         ;
+    wire        w_ULASrc       ;
+    wire [7 :0] w_rd1SrcA      ;
+    wire [2 :0] w_ULAControl   ;
+    wire [7 :0] w_ULAResultWd3 ;
+    wire [7 :0] w_rd2          ;
+    wire        w_RegWrite     ;
+    wire        w_Branch       ;
+    wire        w_Jump         ;
+    wire        w_MemWrite     ;
+    wire        w_MemtoReg     ;
+
+
+    assign LEDR[9:0] ={w_RegDst,w_ULASrc,w_ULAControl,w_Branch,w_MemWrite,w_MemtoReg,w_Jump}; 
+    assign w_wa3  = ( w_RegDst ) ? w_Inst[15:11] : w_Inst[20:16];
+    assign w_SrcB = ( w_ULASrc ) ? w_Inst[7 : 0]         : w_rd2;
+    assign w_PCp1 = w_PC + 1;
+
+    PC myPC(
+				.rst		(		 KEY[1]				),
+                .clk        (        KEY[0]             ),
+                .PCin       (        w_PCp1             ),
+                .PCout      (        w_PC               )
+    );
+
+    InstrMemory myInstrMemory(
+                .address    (       w_PC                ),
+                .RD         (       w_Inst              )
+    );
+    control_unit myULAControl(
+                .OP         (       w_Inst[31:26]       ),
+                .Funct      (       w_Inst[ 5: 0]       ),
+                .RegWrite   (       w_RegWrite          ),
+                .RegDst     (       w_RegDst            ),
+                .ULASrc     (       w_ULASrc            ),
+                .ULAControl (       w_ULAControl        ),
+                .Jump       (       w_Jump              ),
+                .MemWrite   (       w_MemWrite          )
+    );
+    RegisterFile  myRegisterFile    (
+				.rst		(		 KEY[1]				),
+                .clk        (        KEY[0]             ),
+                .ra1        (       w_Inst[25:21]       ),//pq ra1 e o e ra2 recebem 5 bits ?
+                .ra2        (       w_Inst[20:16]       ),
+                .we3        (       w_RegWrite          ),
+                .wa3        (       w_wa3               ),
+                .wd3        (       w_ULAResultWd3      ),
+                .rd1        (       w_rd1SrcA           ),
+                .rd2        (       w_rd2               ),
+                .rg0        (       w_d0x0              ),
+                .rg1        (       w_d0x1              ),
+                .rg2        (       w_d0x2              ),
+                .rg3        (       w_d0x3              ),
+                .rg4        (       w_d1x0              ),
+                .rg5        (       w_d1x1              ),
+                .rg6        (       w_d1x2              ),
+                .rg7        (       w_d1x3              )
+
+    );
+    ula myULA   (
+
+                .ScrB       (       w_SrcB              ),
+                .ScrA       (       w_rd1SrcA           ),
+                .ULAControl (       w_ULAControl        ),
+                .ULAResult  (       w_ULAResultWd3      )
+    );
 
 // --------------------------------------------------
 endmodule
