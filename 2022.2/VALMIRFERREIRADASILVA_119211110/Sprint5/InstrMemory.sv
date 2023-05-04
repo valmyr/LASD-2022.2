@@ -12,5 +12,13 @@ module InstrMemory#(parameter WIDTH = 8)(
     assign machine_code[4] = 32'b000000_00001_00010_00100_00000_100101; //ADD $1,$0,3 -> 3+0
     assign machine_code[5] = 32'b000000_00001_00010_00101_00000_100111; //NOR $5,$1,$2 -> 
     assign machine_code[6] = 32'b000000_00101_00100_00110_00000_101010; //SLT $6,$5,$4 ->  
+
+    //desafio deslocamentento sem mudança de hardware
+    // assign machine_code[0] = 32'b001000_00000_00001_00000_00011_001010;
+    // assign machine_code[1] = 32'b001000_00001_00001_00001_00000_100000;
+    // assign machine_code[2] = 32'b001000_00001_00001_00001_00000_100000;
+    // assign machine_code[3] = 32'b001000_00001_00001_00001_00000_100000;
+    // assign machine_code[4] = 32'b001000_00001_00001_00001_00000_100000;
+
     assign RD = machine_code[address];
 endmodule
