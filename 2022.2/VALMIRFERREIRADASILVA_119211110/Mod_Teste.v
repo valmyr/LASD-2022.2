@@ -54,7 +54,7 @@ LCD_TEST MyLCD (
 
 
 //------------------Sprint1---------------------
-//---------- Unidade LÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³gica AritmÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©tricas -------
+//---------- Unidade lógica Aritmética -------
 // ULA minha_ula(
 //     .sel        (       SW      [17]     ),
 //     .input_a    (       SW      [3:0]    ),
@@ -75,8 +75,8 @@ LCD_TEST MyLCD (
     
 //  );
 // decod_hexa2_7seg mydecod_inst02(
-//         .bincode                (   w_counter_value    ),
-//         .pinoutdisplay7segment  (   HEX1[0: 6]    )
+//         .bincode                (   w_counter_value ),
+//         .pinoutdisplay7segment  (   HEX1[0: 6]      )
 // );
 
 
@@ -115,7 +115,7 @@ LCD_TEST MyLCD (
 // 	.ra2		(		SW [10: 8] 	    ),
 // 	.wd3		(		SW	[7	: 0]    ),
 // 	.rd1		(		w_d0x0[7:0]	    ),
-//     .rst        (       KEY[    2]      ),
+//  .rst        (       KEY[    2]      ),
 // 	.rd2		(		w_d0x1[7:0]	    )
 // );
 // decod_hexa2_7seg displayWD3_LSB(
