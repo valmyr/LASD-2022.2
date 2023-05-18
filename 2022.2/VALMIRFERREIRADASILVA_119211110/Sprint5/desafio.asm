@@ -10,4 +10,4 @@ def desl(n):
      s1 = 2*s1
      s1 = 2*s1
      s1 = 2*s1
-     return 2*s1
+     return s1

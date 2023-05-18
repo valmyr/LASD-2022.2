@@ -24,7 +24,12 @@ module control_unit#(parameter WIDTH = 6)(
             12'b000100_xxxxxx:{RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b0_x_0_110_1_0_x_0;
             12'b001000_xxxxxx:{RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b1_0_1_010_0_0_0_0;
             12'b000010_xxxxxx:{RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b0_x_x_xxx_x_0_x_1;
-				default          :{RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b0_0_0_000_0_0_0_0;
+            12'b100011_xxxxxx:{RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b1_0_1_010_0_0_1_0;
+            12'b101011_xxxxxx:{RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b0_x_1_010_0_1_x_0;
+            12'b000100_xxxxxx:{RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b0_x_0_110_1_0_x_0;
+            12'b001000_xxxxxx:{RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b1_0_1_010_0_0_0_0;
+            12'b000010_xxxxxx:{RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b0_x_x_xxx_x_0_x_1;
+		    default          :{RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b0_0_0_000_0_0_0_0;
         endcase
     end
 endmodule

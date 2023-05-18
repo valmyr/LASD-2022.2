@@ -1,6 +1,6 @@
-`default_nettype none //Comando para desabilitar declaraÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o automÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡tica de wires
-`include "./LCD_TEST2.v"
-`include "./LCD_Controller.v"
+`default_nettype none //Comando para desabilitar declaraÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o automÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡tica de wires
+//`include "./LCD_TEST2.v"
+//`include "./LCD_Controller.v"
 `include "./Sprint1/ULA.sv"
 `include "./Sprint2/decod_hexa2_7seg.sv"
 `include "./Sprint2/seven_segment_loop.sv"
@@ -54,7 +54,7 @@ LCD_TEST MyLCD (
 
 
 //------------------Sprint1---------------------
-//---------- Unidade lógica Aritmética -------
+//---------- Unidade lÃ³gica AritmÃ©tica -------
 // ULA minha_ula(
 //     .sel        (       SW      [17]     ),
 //     .input_a    (       SW      [3:0]    ),
@@ -161,6 +161,195 @@ LCD_TEST MyLCD (
 //------------------Sprint5--------------------------
 //-------            CPU v0.1            ------------
 
+    // wire [7 :0] w_PC           ;
+    // wire [7 :0] w_PCp1         ;
+    // wire [31:0] w_Inst         ;
+    // wire [4 :0] w_wa3          ;
+    // wire        w_RegDst       ;
+    // wire [7 :0] w_SrcB         ;
+    // wire        w_ULASrc       ;
+    // wire [7 :0] w_rd1SrcA      ;
+    // wire [2 :0] w_ULAControl   ;
+    // wire [7 :0] w_ULAResultWd3 ;
+    // wire [7 :0] w_rd2          ;
+    // wire        w_RegWrite     ;
+    // wire        w_Branch       ;
+    // wire        w_Jump         ;
+    // wire        w_MemWrite     ;
+    // wire        w_MemtoReg     ;
+
+
+    // assign LEDR[9:0] ={w_RegDst,w_ULASrc,w_ULAControl,w_Branch,w_MemWrite,w_MemtoReg,w_Jump}; 
+    // assign w_wa3  = ( w_RegDst ) ? w_Inst[15:11] : w_Inst[20:16];
+    // assign w_SrcB = ( w_ULASrc ) ? w_Inst[7 : 0]         : w_rd2;
+    // assign w_PCp1 = w_PC + 1;
+	// assign LEDG[0] = ~KEY[0]; 
+	// assign LEDG[1] = ~KEY[1]; 
+	// assign w_d0x4  = w_PC; 
+	 
+    // PC myPC(
+	// 			.rst		(		 KEY[1]				),
+    //             .clk        (        KEY[0]             ),
+    //             .PCin       (        w_PCp1             ),
+    //             .PCout      (        w_PC               )
+    // );
+
+    // InstrMemory myInstrMemory(
+    //             .address    (       w_PC                ),
+    //             .RD         (       w_Inst              )
+    // );
+    // control_unit myULAControl(
+    //             .OP         (       w_Inst[31:26]       ),
+    //             .Funct      (       w_Inst[ 5: 0]       ),
+    //             .RegWrite   (       w_RegWrite          ),
+    //             .RegDst     (       w_RegDst            ),
+    //             .ULASrc     (       w_ULASrc            ),
+    //             .ULAControl (       w_ULAControl        ),
+    //             .Jump       (       w_Jump              ),
+    //             .MemWrite   (       w_MemWrite          )
+    // );
+    // RegisterFile  myRegisterFile    (
+	// 			.rst		(		 KEY[1]				),
+    //             .clk        (        KEY[0]             ),
+    //             .ra1        (       w_Inst[25:21]       ),//pq ra1 e o e ra2 recebem 4 bits ?
+    //             .ra2        (       w_Inst[20:16]       ),
+    //             .we3        (       w_RegWrite          ),
+    //             .wa3        (       w_wa3               ),
+    //             .wd3        (       w_ULAResultWd3      ),
+    //             .rd1        (       w_rd1SrcA           ),
+    //             .rd2        (       w_rd2               ),
+    //             .rg0        (       w_d0x0              ),
+    //             .rg1        (       w_d0x1              ),
+    //             .rg2        (       w_d0x2              ),
+    //             .rg3        (       w_d0x3              ),
+    //             .rg4        (       w_d1x0              ),
+    //             .rg5        (       w_d1x1              ),
+    //             .rg6        (       w_d1x2              ),
+    //             .rg7        (       w_d1x3              )
+
+    // );
+    // ula myULA   (
+
+    //             .ScrB       (       w_SrcB              ),
+    //             .ScrA       (       w_rd1SrcA           ),
+    //             .ULAControl (       w_ULAControl        ),
+    //             .ULAResult  (       w_ULAResultWd3      )
+    // );
+
+// --------------------------------------------------
+
+
+//------------------Sprint6--------------------------
+//-------            CPU v0.2            ------------
+
+    // wire [7 :0] w_PC           ;
+    // wire [7 :0] w_PCp1         ;
+    // wire [31:0] w_Inst         ;
+    // wire [4 :0] w_wa3          ;
+    // wire        w_RegDst       ;
+    // wire [7 :0] w_SrcB         ;
+    // wire        w_ULASrc       ;
+    // wire [7 :0] w_rd1SrcA      ;
+    // wire [2 :0] w_ULAControl   ;
+    // wire [7 :0] w_ULAResultWd3 ;
+    // wire [7 :0] w_rd2          ;
+    // wire        w_RegWrite     ;
+    // wire        w_Branch       ;
+    // wire        w_Jump         ;
+    // wire        w_MemWrite     ;
+    // wire        w_MemtoReg     ;
+    // wire [7:0]  w_RData        ;
+    // wire [7:0]  w_wd3          ;
+    // wire        w_1Hz          ;
+
+    // assign LEDR[9:0] ={w_RegDst,w_ULASrc,w_ULAControl,w_Branch,w_MemWrite,w_MemtoReg,w_Jump}; 
+    // assign w_wa3  = ( w_RegDst ) ? w_Inst[15:11] : w_Inst[20:16];
+    // assign w_SrcB = ( w_ULASrc ) ? w_Inst[7 : 0]         : w_rd2;
+    // assign w_PCp1 = w_PC + 1;
+	// assign LEDG[0] = w_1Hz; 
+	// assign LEDG[1] = ~KEY[1]; 
+	// assign w_d0x4  = w_PC; 
+	 
+    // PC myPC(
+	// 			.rst		(		 KEY[1]				),
+    //             .clk        (        w_1Hz              ),
+    //             .PCin       (        w_PCp1             ),
+    //             .PCout      (        w_PC               )
+    // );
+
+    // // InstrMemory myInstrMemory(
+    // //             .address    (       w_PC                ),
+    // //             .RD         (       w_Inst              )
+    // // );
+
+    // control_unit myULAControl(
+    //             .OP         (       w_Inst[31:26]       ),
+    //             .Funct      (       w_Inst[ 5: 0]       ),
+    //             .RegWrite   (       w_RegWrite          ),
+    //             .RegDst     (       w_RegDst            ),
+    //             .ULASrc     (       w_ULASrc            ),
+    //             .ULAControl (       w_ULAControl        ),
+    //             .Jump       (       w_Jump              ),
+    //             .Branch     (       w_Branch            ),
+    //             .MemtoReg   (       w_MemtoReg          ),
+    //             .MemWrite   (       w_MemWrite          )
+    // );
+    // RegisterFile  myRegisterFile    (
+	// 			.rst		(		KEY[1]				),
+    //             .clk        (       w_1Hz               ),
+    //             .ra1        (       w_Inst[25:21]       ),//pq ra1 e o e ra2 recebem 4 bits ?
+    //             .ra2        (       w_Inst[20:16]       ),
+    //             .we3        (       w_RegWrite          ),
+    //             .wa3        (       w_wa3               ),
+    //             .wd3        (       w_wd3               ),
+    //             .rd1        (       w_rd1SrcA           ),
+    //             .rd2        (       w_rd2               ),
+    //             .rg0        (       w_d0x0              ),
+    //             .rg1        (       w_d0x1              ),
+    //             .rg2        (       w_d0x2              ),
+    //             .rg3        (       w_d0x3              ),
+    //             .rg4        (       w_d1x0              ),
+    //             .rg5        (       w_d1x1              ),
+    //             .rg6        (       w_d1x2              ),
+    //             .rg7        (       w_d1x3              )
+
+    // );
+    // ula myULA   (
+
+    //             .ScrB       (       w_SrcB              ),
+    //             .ScrA       (       w_rd1SrcA           ),
+    //             .ULAControl (       w_ULAControl        ),
+    //             .ULAResult  (       w_ULAResultWd3      )
+    // );
+
+
+    // RomInstMem myRomInstMem(
+    //     .address    (   w_PC            ),
+    //     .clock      (   CLOCK_50        ),
+    //     .q          (   w_Inst          )
+    // );
+
+    // RamDataMem myRamDataMem(
+    //     .clock  (   CLOCK_50        ),
+    //     .address(   w_ULAResultWd3  ),
+    //     .data   (   w_rd2           ),
+    //     .q      (   w_RData         ),
+    //     .wren   (   w_MemWrite      )
+
+    // );
+
+    // frequencydivider myfrequency1Hz(
+    //     .clk  (  CLOCK_27 ),
+    //     .rst  ( 1  ),
+    //     .myclk(  w_1Hz    )
+
+    // );
+    // assign w_wd3 = (w_MemtoReg) ? w_RData :w_ULAResultWd3;
+// --------------------------------------------------
+
+//------------------Sprint7--------------------------
+//-------            CPU v0.3            ------------
+
     wire [7 :0] w_PC           ;
     wire [7 :0] w_PCp1         ;
     wire [31:0] w_Inst         ;
@@ -177,24 +366,45 @@ LCD_TEST MyLCD (
     wire        w_Jump         ;
     wire        w_MemWrite     ;
     wire        w_MemtoReg     ;
-
-
+    wire [7:0]  w_RData        ;
+    wire [7:0]  w_wd3          ;
+    wire        w_1Hz          ;
+    wire        w_Z            ;
+    wire [7:0]  w_nPC          ;
+    wire        w_PCBr         ;
+    wire [7:0]  w_PCBranch     ;
+    wire [7:0]  w_m1           ;
+    
     assign LEDR[9:0] ={w_RegDst,w_ULASrc,w_ULAControl,w_Branch,w_MemWrite,w_MemtoReg,w_Jump}; 
-    assign w_wa3  = ( w_RegDst ) ? w_Inst[15:11] : w_Inst[20:16];
-    assign w_SrcB = ( w_ULASrc ) ? w_Inst[7 : 0]         : w_rd2;
-    assign w_PCp1 = w_PC + 1;
 
+	assign LEDG[0] = w_1Hz; 
+	assign LEDG[1] = ~KEY[1]; 
+	assign w_d0x4  = w_PC; 
+
+    assign w_PCSrc = w_Z & w_Branch;
+    //Somadores
+    assign w_PCp1 = w_PC + 1;
+    assign w_PCBranch = w_Inst[7:0]+w_PCp1;
+    //Multiplexadores da CPU
+    assign w_wa3  = ( w_RegDst ) ? w_Inst[15:11] : w_Inst[20:16]    ;
+    assign w_SrcB = ( w_ULASrc ) ? w_Inst[7 : 0] : w_rd2            ;
+    assign w_wd3  = (w_MemtoReg) ? w_RData       : w_ULAResultWd3   ;
+    assign w_m1   = (  w_PCSrc ) ? w_PCBr        : w_PCBranch       ;                 ;
+    assign w_nPC  = (  w_Jump  ) ? w_Inst[7:0]   : w_m1             ; 
+
+	 
     PC myPC(
 				.rst		(		 KEY[1]				),
-                .clk        (        KEY[0]             ),
-                .PCin       (        w_PCp1             ),
+                .clk        (        w_1Hz              ),
+                .PCin       (        w_nPC              ),
                 .PCout      (        w_PC               )
     );
 
-    InstrMemory myInstrMemory(
-                .address    (       w_PC                ),
-                .RD         (       w_Inst              )
-    );
+    // InstrMemory myInstrMemory(
+    //             .address    (       w_PC                ),
+    //             .RD         (       w_Inst              )
+    // );
+
     control_unit myULAControl(
                 .OP         (       w_Inst[31:26]       ),
                 .Funct      (       w_Inst[ 5: 0]       ),
@@ -203,16 +413,18 @@ LCD_TEST MyLCD (
                 .ULASrc     (       w_ULASrc            ),
                 .ULAControl (       w_ULAControl        ),
                 .Jump       (       w_Jump              ),
+                .Branch     (       w_Branch            ),
+                .MemtoReg   (       w_MemtoReg          ),
                 .MemWrite   (       w_MemWrite          )
     );
     RegisterFile  myRegisterFile    (
-				.rst		(		 KEY[1]				),
-                .clk        (        KEY[0]             ),
-                .ra1        (       w_Inst[25:21]       ),//pq ra1 e o e ra2 recebem 5 bits ?
+				.rst		(		KEY[1]				),
+                .clk        (       w_1Hz               ),
+                .ra1        (       w_Inst[25:21]       ),//pq ra1 e o e ra2 recebem 4 bits ?
                 .ra2        (       w_Inst[20:16]       ),
                 .we3        (       w_RegWrite          ),
                 .wa3        (       w_wa3               ),
-                .wd3        (       w_ULAResultWd3      ),
+                .wd3        (       w_wd3               ),
                 .rd1        (       w_rd1SrcA           ),
                 .rd2        (       w_rd2               ),
                 .rg0        (       w_d0x0              ),
@@ -230,7 +442,31 @@ LCD_TEST MyLCD (
                 .ScrB       (       w_SrcB              ),
                 .ScrA       (       w_rd1SrcA           ),
                 .ULAControl (       w_ULAControl        ),
-                .ULAResult  (       w_ULAResultWd3      )
+                .ULAResult  (       w_ULAResultWd3      ),
+                .Z          (       w_Z                 )
+    );
+
+
+    RomInstMem myRomInstMem(
+        .address    (   w_PC            ),
+        .clock      (   CLOCK_50        ),
+        .q          (   w_Inst          )
+    );
+
+    RamDataMem myRamDataMem(
+        .clock  (   CLOCK_50        ),
+        .address(   w_ULAResultWd3  ),
+        .data   (   w_rd2           ),
+        .q      (   w_RData         ),
+        .wren   (   w_MemWrite      )
+
+    );
+
+    frequencydivider myfrequency1Hz(
+        .clk  (  CLOCK_27 ),
+        .rst  ( 1  ),
+        .myclk(  w_1Hz    )
+
     );
 
 // --------------------------------------------------
