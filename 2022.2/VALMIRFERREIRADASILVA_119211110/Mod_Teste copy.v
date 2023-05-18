@@ -365,7 +365,7 @@ LCD_TEST MyLCD (
     wire        w_Branch       ;
     wire        w_Jump         ;
     wire        w_MemWrite     ;
-    wire        w_MemtoReg     ;
+    wire [1:0]  w_MemtoReg     ;
     wire [7:0]  w_RData        ;
     wire [7:0]  w_wd3          ;
     wire        w_1Hz          ;
@@ -374,30 +374,39 @@ LCD_TEST MyLCD (
     wire        w_PCBr         ;
     wire [7:0]  w_PCBranch     ;
     wire [7:0]  w_m1           ;
-    
+    wire        w_Jr           ;
+    wire        w_Jal          ;
+    wire        w_BranchCtrl   ;
+    wire        w_PCposMuxs    ;
     assign LEDR[9:0] ={w_RegDst,w_ULASrc,w_ULAControl,w_Branch,w_MemWrite,w_MemtoReg,w_Jump}; 
 
 	assign LEDG[0] = w_1Hz; 
 	assign LEDG[1] = ~KEY[1]; 
 	assign w_d0x4  = w_PC; 
 
-    assign w_PCSrc = w_Z & w_Branch;
+    assign w_BranchCtrl = w_Z & w_Branch;
     //Somadores
     assign w_PCp1 = w_PC + 1;
     assign w_PCBranch = w_Inst[7:0]+w_PCp1;
     //Multiplexadores da CPU
-    assign w_wa3  = ( w_RegDst ) ? w_Inst[15:11] : w_Inst[20:16]    ;
-    assign w_SrcB = ( w_ULASrc ) ? w_Inst[7 : 0] : w_rd2            ;
-    assign w_wd3  = (w_MemtoReg) ? w_RData       : w_ULAResultWd3   ;
-    assign w_m1   = (  w_PCSrc ) ? w_PCBranch    : w_PCp1           ;                 
-    assign w_nPC  = (  w_Jump  ) ? w_Inst[7:0]   : w_m1             ; 
+    assign w_SrcB            = ( w_ULASrc   ) ? w_Inst[7 : 0] : w_rd2            ;
+    assign w_m1              = (w_BranchCtrl) ? w_PCBranch    : w_PCp1           ;                 
+    assign w_nPC             = (   w_Jal    ) ? w_Inst[7:0]   : w_m1             ; 
+    assign w_PCposMuxs       = (   w_Jr     ) ? w_rd1SrcA     : w_nPC            ;
+    assign w_wd3             = (w_MemtoReg  ) == 0 ? w_RDataw_ULAResultWd3       : 
+                               (w_MemtoReg  ) == 1 ? w_RData                     :
+                               (w_MemtoReg  ) == 2 ? w_PCp1                      :
+                                                     0                           ; //New option
+	assign w_wa3             = ( w_RegDst   ) == 0 ? w_Inst[20:16]               :
+                               ( w_RegDst   ) == 1 ? w_Inst[15:11]               :
+                               ( w_RegDst   ) == 2 ? 7                           ;
 
-	 
+
     PC myPC(
-				.rst		(		 KEY[1]				),
-                .clk        (        w_1Hz              ),
-                .PCin       (        w_nPC              ),
-                .PCout      (        w_PC               )
+				.rst		(		 KEY[1]				      ),
+                .clk        (        w_1Hz                    ),
+                .PCin       (        w_PCposMuxs              ),
+                .PCout      (        w_PC                     )
     );
 
     // InstrMemory myInstrMemory(
