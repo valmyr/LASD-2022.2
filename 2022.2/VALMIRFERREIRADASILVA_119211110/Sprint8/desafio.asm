@@ -11,7 +11,7 @@ J 3
 J 2
 
 desafio 2
-()
+
 
 addi $1,$0,1            ;registrador que fetuarei os deslocamentos
 addi $3,$0,0            ;registrador com o número de 1s encontrados
