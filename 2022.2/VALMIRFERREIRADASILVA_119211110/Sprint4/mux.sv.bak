@@ -1,7 +1,0 @@
-module mux2_1(
-    input  logic     sel,
-    input  logic     [7:0] in [1:0],
-    output logic     [7:0] out
-);
-    assign out = in[sel];
-endmodule 
