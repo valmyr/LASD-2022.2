@@ -374,6 +374,7 @@ LCD_TEST MyLCD (
     wire        w_PCBr         ;
     wire [7:0]  w_PCBranch     ;
     wire [7:0]  w_m1           ;
+    wire        w_PCSrc        ; 
     
     assign LEDR[9:0] ={w_RegDst,w_ULASrc,w_ULAControl,w_Branch,w_MemWrite,w_MemtoReg,w_Jump}; 
 
@@ -462,7 +463,7 @@ LCD_TEST MyLCD (
 
     );
 
-    frequencydivider #(frequency = 2)
+    frequencydivider #(.frequency(2))
                     myfrequency1Hz(
         .clk  (  CLOCK_27 ),
         .rst  (        1  ),
