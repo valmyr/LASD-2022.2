@@ -1,0 +1,11 @@
+addi $s6,$s0,0
+delay:
+    addi $s1,$s0,0
+    addi $s2,$s0,50
+    loop:
+        addi,$s1,$s1,1
+        beq $s1,$s2,sai
+        jar loop
+    sai:
+    nor $s6,$s6,$s0
+jar delay
